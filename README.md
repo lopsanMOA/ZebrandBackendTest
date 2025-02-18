@@ -86,7 +86,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Create a User (Admin Only)
 ```http
-POST /api/users/
+POST /api/v1/users/
 ```
 **Headers:**
 ```http
@@ -111,7 +111,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Get User List (Admin Only)
 ```http
-GET /api/users/
+GET /api/v1/users/
 ```
 **Headers:**
 ```http
@@ -135,7 +135,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Get a Single User (Admin Only)
 ```http
-GET /api/users/{user_id}/
+GET /api/v1/users/{user_id}/
 ```
 **Headers:**
 ```http
@@ -152,7 +152,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Update a User (Admin Only)
 ```http
-PUT /api/users/{user_id}/
+PUT /api/v1/users/{user_id}/
 ```
 **Headers:**
 ```http
@@ -161,7 +161,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Delete a User (Admin Only)
 ```http
-DELETE /api/users/{user_id}/
+DELETE /api/v1/users/{user_id}/
 ```
 **Headers:**
 ```http
@@ -170,7 +170,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Get Product List (Public)
 ```http
-GET /api/products/
+GET /api/v1/products/
 ```
 **Response:**
 ```json
@@ -187,7 +187,7 @@ GET /api/products/
 
 ### 🔹 Get a Single Product (Public)
 ```http
-GET /api/products/{product_id}/
+GET /api/v1/products/{product_id}/
 ```
 **Response:**
 ```json
@@ -202,7 +202,7 @@ GET /api/products/{product_id}/
 
 ### 🔹 Create a Product (Admin Only)
 ```http
-POST /api/products/
+POST /api/v1/products/
 ```
 **Headers:**
 ```http
@@ -230,7 +230,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Update a Product (Admin Only)
 ```http
-PUT /api/products/{product_id}/
+PUT /api/v1/products/{product_id}/
 ```
 **Headers:**
 ```http
@@ -239,7 +239,7 @@ Authorization: Bearer your_access_token
 
 ### 🔹 Delete a Product (Admin Only)
 ```http
-DELETE /api/products/{product_id}/
+DELETE /api/v1/products/{product_id}/
 ```
 **Headers:**
 ```http
