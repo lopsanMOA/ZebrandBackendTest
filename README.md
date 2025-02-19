@@ -20,8 +20,8 @@
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/tuusuario/zebrands-catalog.git
-cd zebrands-catalog
+git clone https://github.com/lopsanMOA/ZebrandBackendTest
+cd ZebrandBackendTest
 ```
 
 ### 2. Configure the .env
