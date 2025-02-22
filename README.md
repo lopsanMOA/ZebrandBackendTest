@@ -48,6 +48,10 @@ EMAIL_HOST_PASSWORD=tu_contraseña
 
 # 📌 API Documentation
 
+## API Documentation - [docs](http://78.12.119.118/api/doc/)
+
+## Postman Collection - [<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://crimson-capsule-786341.postman.co/collection/1986978-16d180df-6839-4809-ae30-4f1eeb25e71b?source=rip_markdown)
+
 ## 🔑 Authentication
 This API uses **JWT authentication**. To make authenticated requests, you must include the `Authorization` header with the token obtained from the login endpoint.
 
