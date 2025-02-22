@@ -6,10 +6,15 @@ services:
     command: gunicorn --bind 0.0.0.0:8000 zebrands.wsgi:application
     volumes:
       - .:/code
+      - static-data:/vol/web
     env_file:
       - .env
     expose:
       - "8000"
+    depends_on:
+      - redis
+    networks:
+      - app_network
 
   nginx:
     image: nginx:latest
@@ -17,5 +22,39 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - static-data:/vol/web
     depends_on:
       - web
+    networks:
+      - app_network
+
+  redis:
+    image: redis:6-alpine
+    volumes:
+      - redis-data:/data
+    networks:
+    - app_network
+
+  celery:
+    restart: always
+    build:
+      context: .
+    user: root
+    command: >
+      celery -A zebrands.celery worker -B -l info --loglevel=DEBUG --without-gossip --without-mingle --without-heartbeat -Ofair --pool=solo
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - web
+    networks:
+      - app_network
+
+volumes:
+  postgres123-data: {}
+  redis-data: {}
+  static-data: {}
+
+networks:
+  app_network:
+    driver: bridge

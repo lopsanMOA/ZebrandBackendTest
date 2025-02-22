@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from users.utils import notify_admins
-
+from products.tasks import send_email_notification
 
 
 class Product(models.Model):
@@ -12,7 +11,7 @@ class Product(models.Model):
     query_count = models.IntegerField(default=0)
 
     def save(self, *args, **kwargs):
-        if self.pk:
-            pass
-            #notify_admins(f'Product {self.name} was updated.')
+        is_update = self.pk is not None
         super().save(*args, **kwargs)
+        if is_update:
+            send_email_notification.delay(f'Product {self.name} was updated.')
